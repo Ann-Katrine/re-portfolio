@@ -357,18 +357,6 @@
                     http_response_code(404);
                     die("404 - Der blev ikke fundet nogle kategori'er");                    
                 }
-
-                // $result = $language->getAllLanguage();
-                
-                // if($result[0] === true){
-                    
-                //     http_response_code(200);
-                //     echo json_encode($result[1]);
-                // }
-                // else{
-                //     http_response_code(404);
-                //     die("404 - Det blev ikke fundet");
-                // }
             }
             else if($this->countUri > 2){
 

@@ -9,40 +9,6 @@
         /*             GET               */     
         /*********************************/
         // custom JSON format
-        public function getAllLanguage()
-        {
-            $db = new DB();
-            $finish = array();
-
-            $stmt = $db->conn->prepare("SELECT id, name FROM sprog");
-            $stmt->execute();
-
-            $result = $stmt->get_result();
-
-            if($result != false){
-                while ($row = $result->fetch_object()) {
-                    $getLanguage[] = new AllLanguageViewModel($row->id, $row->name);
-                }
-
-                $antalLanguage = count($getLanguage);
-                for ($i = 0; $i < $antalLanguage; $i++) { 
-                    $setLanguage[] = [
-                        "id" => $getLanguage[$i]->languageId,
-                        "name" => $getLanguage[$i]->languageName
-                    ];
-                }
-
-                array_push($finish, true, $setLanguage);
-            }
-            else{
-                array_push($finish, false);
-            }
-            return $finish;
-            $stmt->close();
-            $db->conn->close();
-        }
-
-        // custom JSON format
         public function getAllLanguageWithProjectId($id)
         {
             $db = new DB();
@@ -113,7 +79,7 @@
         }
 
         // custom JSON format
-        public function getAllInformationFromLanguage($id)
+        public function getAllInformationFromLanguage($id) // bruges muligvis ikke
         {
             $db = new DB();
             $getLanguage = array();
