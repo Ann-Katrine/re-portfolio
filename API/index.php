@@ -11,7 +11,7 @@
     // for at finde ud af hvilken medtode man bruge for at sende request'et, som det var get,post,put,delete, mm.
     $httpMethod = $_SERVER['REQUEST_METHOD'];
 
-    // find ud af hvad de helt præcis gør
+    header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *');
     header("Access-Control-Allow-Methods: *");
     header("Access-Control-Allow-Headers: *");
